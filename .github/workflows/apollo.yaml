@@ -53,7 +53,7 @@ jobs:
           echo "N" >> token.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: token
+          name: token3
           path: token.txt
 
   splashdown:

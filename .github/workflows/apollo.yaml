@@ -38,7 +38,7 @@ jobs:
           echo "U" >> token.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: token
+          name: token2
           path: token.txt
 
   lunar_orbit_insertion:

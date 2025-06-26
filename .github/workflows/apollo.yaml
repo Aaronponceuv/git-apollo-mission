@@ -26,21 +26,6 @@ jobs:
           name: token2
           path: token.txt
 
-  lunar_orbit_insertion:
-    needs: launch
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: token2
-      - name: 🌕 3) Lunar Orbit – concatena token
-        run: |
-          echo "N" >> token.txt
-      - uses: actions/upload-artifact@v4
-        with:
-          name: token2
-          path: token.txt
-
   transposition_and_docking:
     needs: lunar_orbit_insertion
     runs-on: ubuntu-latest
@@ -56,8 +41,23 @@ jobs:
           name: token3
           path: token.txt
 
+  lunar_orbit_insertion:
+    needs: launch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: token2
+      - name: 🌕 3) Lunar Orbit – concatena token
+        run: |
+          echo "N" >> token.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: token2
+          path: token.txt
+
   splashdown:
-    needs: [launch, transposition_and_docking, lunar_orbit_insertion]
+    needs: lunar_orbit_insertion
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4

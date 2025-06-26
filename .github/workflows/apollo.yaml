@@ -25,7 +25,6 @@ jobs:
         with:
           name: token
           path: token.txt
-          overwrite: true
 
   lunar_orbit_insertion:
     needs: launch
@@ -41,7 +40,6 @@ jobs:
         with:
           name: token
           path: token.txt
-          overwrite: true
 
   transposition_and_docking:
     needs: lunar_orbit_insertion
@@ -57,7 +55,6 @@ jobs:
         with:
           name: token
           path: token.txt
-          overwrite: true
 
   splashdown:
     needs: [launch, transposition_and_docking, lunar_orbit_insertion, splashdown]

@@ -15,7 +15,7 @@ jobs:
           python-version: "3.11"
 
   launch:
-    needs: 
+    needs: prepare
     runs-on: ubuntu-latest
     steps:
       - name: 🚀 1) Launch – crea token
@@ -27,7 +27,7 @@ jobs:
           path: token.txt
 
   lunar_orbit_insertion:
-    needs: 
+    needs: launch
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
@@ -42,7 +42,7 @@ jobs:
           path: token.txt
 
   transposition_and_docking:
-    needs: 
+    needs: lunar_orbit_insertion
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
@@ -57,7 +57,7 @@ jobs:
           path: token.txt
 
   splashdown:
-    needs: [launch, transposition_and_docking, lunar_orbit_insertion, splashdown]
+    needs: [transposition_and_docking]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4

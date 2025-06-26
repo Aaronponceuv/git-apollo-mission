@@ -24,7 +24,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: token2
-          path: token2.txt
+          path: token.txt
 
   lunar_orbit_insertion:
     needs: launch

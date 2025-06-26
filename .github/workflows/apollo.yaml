@@ -54,7 +54,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: token3
-          path: token3.txt
+          path: token.txt
 
   splashdown:
     needs: [launch, transposition_and_docking, lunar_orbit_insertion]

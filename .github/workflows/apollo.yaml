@@ -27,7 +27,7 @@ jobs:
           path: token.txt
 
   transposition_and_docking:
-    needs: lauch
+    needs: launch
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4

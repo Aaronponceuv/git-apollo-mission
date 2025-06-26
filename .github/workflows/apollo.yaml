@@ -23,7 +23,7 @@ jobs:
           echo "L" > token.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: token2
+          name: token
           path: token.txt
 
   transposition_and_docking:
@@ -47,13 +47,13 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: token2
+          name: token
       - name: 🌕 3) Lunar Orbit – concatena token
         run: |
           echo "N" >> token.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: token2
+          name: token
           path: token.txt
 
   splashdown:
@@ -62,7 +62,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: token4
+          name: token
       - name: ✅ Verifica token y muestra mensaje lunar
         run: |
           ACTUAL=$(cat token.txt)

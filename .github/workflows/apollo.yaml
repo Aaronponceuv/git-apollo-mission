@@ -73,7 +73,7 @@ jobs:
           EXPECTED="LUN"
           if [[ "$ACTUAL" == "$EXPECTED" ]]; then
             echo "🌊 4) Splashdown completado"
-            python /home/aaronponce/Documentos/Cloud Computing/taller_git/git-apollo-mission/apollo/mission.py
+            python3 apollo/mission.py
           else
             echo "❌ Secuencia incorrecta. Token='$ACTUAL', esperado='$EXPECTED'"
             exit 1

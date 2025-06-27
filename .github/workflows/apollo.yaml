@@ -63,7 +63,7 @@ jobs:
     needs: lunar_orbit_insertion
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@v4
         with:
           name: token3
       - name: ✅ Verifica token y muestra mensaje lunar
@@ -73,7 +73,7 @@ jobs:
           EXPECTED="LUN"
           if [[ "$ACTUAL" == "$EXPECTED" ]]; then
             echo "🌊 4) Splashdown completado"
-            python3 apollo/mission.py
+            python apollo/mission.py
           else
             echo "❌ Secuencia incorrecta. Token='$ACTUAL', esperado='$EXPECTED'"
             exit 1

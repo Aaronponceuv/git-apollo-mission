@@ -21,6 +21,7 @@ jobs:
       - name: 🚀 1) Launch – crea token
         run: |
           echo "L" > token.txt
+          cat token.txt
       - uses: actions/upload-artifact@v4
         with:
           name: token
@@ -36,6 +37,7 @@ jobs:
       - name: 🔄 2) Docking – concatena token
         run: |
           echo "U" >> token.txt
+          cat token.txt
       - uses: actions/upload-artifact@v4
         with:
           name: token2
@@ -51,6 +53,7 @@ jobs:
       - name: 🌕 3) Lunar Orbit – concatena token
         run: |
           echo "N" >> token.txt
+          cat token.txt
       - uses: actions/upload-artifact@v4
         with:
           name: token3
